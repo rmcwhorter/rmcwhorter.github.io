@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<!--
+	Visualize by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Ryan McWhorter | Prime Factorization</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/prism.css" />
+	</head>
+	<body>
+		<script src="../assets/js/prism.js"></script>
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<span class="avatar"><a href="#"><img src="../images/better_profile_pic.jpg" alt=""></a></span>
+                        <h1>Rust vs C++ Round 1: Prime Factorization</h1>
+                        <h4>Published December 21, 2019</h4>
+						<ul class="icons">
+							<li><a href="../index.html" class="icon style2 fa-home"><span class="label">Home</span></a></li>
+							<li><a href="https://twitter.com/rmcwhorter99" target="_blank" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.instagram.com/rmcwhorter99/?hl=en" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="https://github.com/rmcwhorter" target="_blank" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="mailto:ryan.mcwhorter@utexas.edu" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
+						</ul>
+					</header>
+
+				<!-- Main -->
+					<section id="main">
+						<div>
+                            <h2>Why?</h2>
+                            <p>Programming for speed is hard: no one disputes this. It also happens to be really important. High speed code is necessary for medical imaging, it's necessary for quantiitative finance, it's necessary for self driiving cars. One of the most interesting developments in this space in recent years is <a href="https://www.rust-lang.org/" target="_blank">Rust</a>, a language that claims to challenge C++, the reigning champion. </p>
+                            <h2>Summary</h2>
+                            <p>In this post, I'll take you through the unique factorization theorem, and use it to gauge the preformance of Rust and C++.</p>
+                            <h2>The Unique Factorization Theorem</h2>
+                            <p>This theorem also goes by <a href="https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic" target="_blank">the fundamental theorem of arithmetic</a>. The essential claim of this theorem is that every positive integer (1, 2, 3, 4, 5, ... , n) can be factored into <a href="https://en.wikipedia.org/wiki/Prime_number" target="_blank">primes</a>. For example, 30 factorizes into 2 x 3 x 5, and 31 factorizes into 1 x 31. Remember that prime numbers are numbers that are divisible only by itself and 1.</p>
+                            <h2>Who Cares About Unique Factorization?</h2>
+                            <p>The short answer is that everyone who cares about cryptography cares about unique factorization, but why that is the case is a story for another time. If you now ask "but who cares about cryptography?", I would counter that everyone who likes to keep their money in a bank account cares about cryptography. With regards to gauging code preformance, we care because it turns out factoring <a href="" target="_blank">semi-primes</a> (numbers that are the product of only two primes) is really hard. In fact, it is hard enough that it serves as the basis of <a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)" target="_blank">RSA</a> (a prominent public-private cryptographic method). Now, RSA uses 2048 bit integers. We don't have that kind of time (by design), so we will be factoring 64 bit integers.</p>
+                            <h2>The Code</h2>
+							<p>The code for this can be found on <a href="https://github.com/rmcwhorter/primes" target="_blank">GitHub</a>. Let's start with the Rust code. I'm not going to claim that anything I write here is the fastest it could be; I'm sure little improvements can be made here or there. But the algorithms used in the Rust section are almost identical to those used in the C++ section. In fact, in places I was able to just copy and paste, adding parenthesis as needed. First, we have to be able to determine if a number is prime or not. Let's write that.</p>
+                            <pre><code class="language-rust">fn is_prime(n: i64) -> bool {
+	if n <= 1 {
+		return false;
+	}
+	if n <= 3 {
+		return true;
+	}
+
+	if (n%2 == 0) || (n%3 == 0) {
+		return false;
+	}
+
+	let mut i: i64 = 5;
+	while i*i <= n {
+		if (n%i == 0) || (n%(i+2) == 0) {
+			return false;
+		}
+		i = i+6;
+	}
+
+	return true;
+}</code></pre>
+						<p>Now, to factor a number, we're going to just start dividing it by primes, starting with 2. To do this, we'll need to find the next prime after a number n.</p>
+						<pre><code class="language-rust">fn next_prime(n: i64) -> i64 {
+	if n <= 1 {
+		return 2;
+	}
+
+	let mut prime: i64 = n;
+	let mut found: bool = false;
+
+	while !found {
+		prime += 1;
+		if is_prime(prime) {
+			found = true;
+		}
+	}
+
+	return prime;
+}</code></pre>
+					<p>Finally, we can get down to the business of actually factoring our numbers. It looks like this:</p>
+					<pre><code class="language-rust">fn factorize(n: i64) -> Vec&lt;i64&gt; {
+	let mut live: i64 = n;
+	let mut rtn: Vec<i64> = vec![];
+
+	let mut prime: i64 = 2;
+	while (&rtn).into_iter().product::<i64>() != n {
+		if live % prime == 0 {
+			rtn.push(prime);
+			live = live / prime;
+		} else {
+			prime = next_prime(prime);
+		}
+	}
+
+	return rtn;
+}</code></pre>
+					<p>We can do exactly the same thing in C++.</p>
+					<pre><code class="language-cpp">bool is_prime(long long int n)  
+{  
+	// Corner cases  
+	if (n <= 1)  return false;  
+	if (n <= 3)  return true;  
+	
+	// This is checked so that we can skip   
+	// middle five numbers in below loop  
+	if (n%2 == 0 || n%3 == 0) return false;  
+	
+	for (int i=5; i*i<=n; i=i+6)  
+		if (n%i == 0 || n%(i+2) == 0)  
+			return false;  
+	
+	return true;  
+}  
+	
+// Function to return the smallest 
+// prime number greater than N 
+int next_prime(long long int N) 
+{ 
+	
+	// Base case 
+	if (N <= 1) 
+		return 2; 
+	
+	long long int prime = N; 
+	bool found = false; 
+	
+	// Loop continuously until isPrime returns 
+	// true for a number greater than n 
+	while (!found) { 
+		prime++; 
+	
+		if (is_prime(prime)) 
+			found = true; 
+	} 
+	
+	return prime; 
+}
+
+vector&lt;long long int&gt; factorize(long long int n) {
+    long long int live = n;
+    vector<long long int> rtn;
+
+    long long int prime = 2;
+    while (accumulate(begin(rtn), end(rtn), 1, std::multiplies<double>()) != n) {
+        if (live % prime == 0) {
+            rtn.push_back(prime);
+            live = live / prime;
+        } else {
+            prime = next_prime(prime);
+        }
+    }
+
+    return rtn;
+}</code></pre>
+                        </div>
+					</section>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
