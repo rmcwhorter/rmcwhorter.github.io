@@ -21,7 +21,7 @@
 					<header id="header">
 						<span class="avatar"><a href="#"><img src="../images/better_profile_pic.jpg" alt=""></a></span>
                         <h1>Rust vs C++ Round 1: Prime Factorization</h1>
-                        <h4>Published December 21, 2019</h4>
+                        <h4>Published December 21, 2019; Last Edited December 29, 2019</h4>
 						<ul class="icons">
 							<li><a href="../index.html" class="icon style2 fa-home"><span class="label">Home</span></a></li>
 							<li><a href="https://twitter.com/rmcwhorter99" target="_blank" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
@@ -35,11 +35,11 @@
 					<section id="main">
 						<div>
                             <h2>Why?</h2>
-                            <p>Programming for speed is hard: no one disputes this. It also happens to be really important. High speed code is necessary for medical imaging, it's necessary for quantiitative finance, it's necessary for self driiving cars. One of the most interesting developments in this space in recent years is <a href="https://www.rust-lang.org/" target="_blank">Rust</a>, a language that claims to challenge C++, the reigning champion. </p>
+                            <p>Fundamentally, this is about programming code that runs as fast as possible. Programming for speed is hard: no one disputes this. It also happens to be really important. High speed code is necessary for medical imaging, it's necessary for quantiitative finance, it's necessary for self driving cars. One of the most interesting developments in this space in recent years is <a href="https://en.wikipedia.org/wiki/Rust_(programming_language)" target="_blank">Rust</a>, a language that claims to challenge <a href="https://en.wikipedia.org/wiki/C%2B%2B" target="_blank">C++</a>, the reigning champion. </p>
                             <h2>Summary</h2>
                             <p>In this post, I'll take you through the unique factorization theorem, and use it to gauge the preformance of Rust and C++.</p>
                             <h2>The Unique Factorization Theorem</h2>
-                            <p>This theorem also goes by <a href="https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic" target="_blank">the fundamental theorem of arithmetic</a>. The essential claim of this theorem is that every positive integer (1, 2, 3, 4, 5, ... , n) can be factored into <a href="https://en.wikipedia.org/wiki/Prime_number" target="_blank">primes</a>. For example, 30 factorizes into 2 x 3 x 5, and 31 factorizes into 1 x 31. Remember that prime numbers are numbers that are divisible only by itself and 1.</p>
+                            <p>This theorem is also sometimes called <a href="https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic" target="_blank">the fundamental theorem of arithmetic</a>. The essential claim of this theorem is that every positive integer (1, 2, 3, 4, 5, ... , n) can be factored into <a href="https://en.wikipedia.org/wiki/Prime_number" target="_blank">primes</a>. For example, 60 factorizes into 2 x 2 x 3 x 5, and 61 factorizes into 1 x 61. Remember that prime numbers are positive <a href="https://en.wikipedia.org/wiki/Integer" target="_blank">integers</a> which are divisible only by itself and 1.</p>
                             <h2>Who Cares About Unique Factorization?</h2>
                             <p>The short answer is that everyone who cares about cryptography cares about unique factorization, but why that is the case is a story for another time. If you now ask "but who cares about cryptography?", I would counter that everyone who likes to keep their money in a bank account cares about cryptography. With regards to gauging code preformance, we care because it turns out factoring <a href="" target="_blank">semi-primes</a> (numbers that are the product of only two primes) is really hard. In fact, it is hard enough that it serves as the basis of <a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)" target="_blank">RSA</a> (a prominent public-private cryptographic method). Now, RSA uses 2048 bit integers. We don't have that kind of time (by design), so we will be factoring 64 bit integers.</p>
                             <h2>The Code</h2>
@@ -159,9 +159,32 @@ vector&lt;long long int&gt; factorize(long long int n) {
 
     return rtn;
 }</code></pre>
+						<h2>So Let's Time It</h2>
+						<p>I'm going to omit the remainder of the code from here on. An accountant would say it's immaterial. I won't though, I'll just provide a <a href="https://github.com/rmcwhorter/primes" target="_blank">link</a> to a GitHub repo which contains everything. To test this code, we will factor two integers. To test a general case, we can go with 977666464, which factorizes into 2 x 2 x 2 x 2 x 2 x 17 x 1797181, and to test the semi-prime case, we can use 858645989, which is 1579 x 543791. I ran each for 100 trials, here are the results.</p>
+						<table style="width:100%">
+							<tr>
+							  <th></th>
+							  <th>Rust</th>
+							  <th>C++</th>
+							  <th>[Rust/C++]</th>
+							</tr>
+							<tr>
+							  <td>977666464</td>
+							  <td>547288.23 μs</td>
+							  <td>431460.00 μs</td>
+							  <td>+26.8%</td>
+							</tr>
+							<tr>
+							  <td>858645989</td>
+							  <td>104174.32 μs</td>
+							  <td>431460.00 μs</td>
+							  <td>+24.0%</td>
+							</tr>
+						  </table> 
+						  <p>Much to my own surprise, Rust got thoroughly beaten. I've been writing Rust for some time now but I'm quite new to C++, so I thought that my C++ code would be slower than my Rust code. This does hold with a more general trend of C++ being slightly faster than Rust, probably because of the extra time spent on memory guarentees by Rust. Hopefully as Rust progresses it will get faster and close the gap, but for now C++ will probably remain king of languages for time constrained applications.</p>
                         </div>
 					</section>
-			</div>
+			</div> 
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
