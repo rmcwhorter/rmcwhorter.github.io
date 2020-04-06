@@ -125,8 +125,8 @@
 								<li>
 									<h4>Further Skills</h4>
 									<ul>
-										<li>I have varying amounts of exposure to R, Bash, C++, and CUDA</li>
-										<li>I've also built computers before, and have some degree of familiarity with their internal workings and how to make them faster</li>
+										<li>I have varying amounts of exposure to R, Bash, and SQL</li>
+										<li>I've also built computers before, and have some degree of familiarity with their internal workings and with overclocking</li>
 									</ul>
 								</li>
 							</ul>
@@ -194,10 +194,34 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.poptrox.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/main.js"></script>
+		
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+
+		<!-- TODO: Add SDKs for Firebase products that you want to use
+			https://firebase.google.com/docs/web/setup#available-libraries -->
+		<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-analytics.js"></script>
+
+		<script>
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyBKh6_av2jddYO0tTm22wysXL-thvBdKWc",
+			authDomain: "personal-site-5502c.firebaseapp.com",
+			databaseURL: "https://personal-site-5502c.firebaseio.com",
+			projectId: "personal-site-5502c",
+			storageBucket: "personal-site-5502c.appspot.com",
+			messagingSenderId: "623204832050",
+			appId: "1:623204832050:web:c26fcb97edb0db67fffd2b",
+			measurementId: "G-KM1SHZD469"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		firebase.analytics();
+		</script>
 	</body>
 	
 </html>
