@@ -1,227 +1,351 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <!--
 	Visualize by TEMPLATED
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
-	<head>
-		<title>Ryan McWhorter | Résumé</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body>
+  <head>
+    <title>Ryan McWhorter | Résumé</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header">
+        <span class="avatar"
+          ><a href="index.html"
+            ><img src="images/better_profile_pic.jpg" alt="" /></a
+        ></span>
+        <h1>Ryan McWhorter</h1>
+        <h2>
+          My
+          <a href="reading.html" target="_blank"
+            ><span class="label">reading list</span></a
+          >
+          is far more interesting
+        </h2>
+        <ul class="icons">
+          <li>
+            <a href="index.html" class="icon style2 fa-home"
+              ><span class="label">Home</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://twitter.com/rmcwhorter99"
+              target="_blank"
+              class="icon style2 fa-twitter"
+              ><span class="label">Twitter</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/ryan-mcwhorter/"
+              target="_blank"
+              class="icon style2 fa-linkedin"
+              ><span class="label">Linked In</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/rmcwhorter"
+              target="_blank"
+              class="icon style2 fa-github"
+              ><span class="label">GitHub</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="mailto:ryan.mcwhorter@utexas.edu"
+              class="icon style2 fa-envelope-o"
+              ><span class="label">Email</span></a
+            >
+          </li>
+        </ul>
+      </header>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+      <!-- Main -->
+      <section id="main">
+        <!-- Thumbnails -->
+        <div>
+          <h2>Education - University of Texas, Austin</h2>
+          <ul class="">
+            <li>I am a junior majoring in quantitative finance</li>
+            <li>
+              I've completed 93 completed credit hours, including 17 additional
+              hours of upper level mathematics including probability, linear
+              algebra, differential equations, and vector calculus which fall
+              outside my major
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2>
+            <a href="https://sigmoid-tech.com/" target="_blank"
+              >Sigmoid Technologies</a
+            >
+            - Co-founder; December 2019 and onwards
+          </h2>
+          <ul>
+            <li>
+              I partnered with my co-founder to design and build an app which
+              allows on the fly diagnosis of chest x-rays.
+            </li>
+            <li>
+              This included work with machine learning which entailed training
+              convolutional neural networks as well as replicating established
+              scientific work such as
+              <a
+                href="https://stanfordmlgroup.github.io/projects/chexnet/"
+                target="_blank"
+                >CheXNet</a
+              >
+            </li>
+            <li>
+              I also built a backend system on Firebase which includes the
+              ability to authenticate users, upload images, and process data.
+            </li>
+            <li>
+              Some challenges we faced included getting our ML models to run
+              automatically in the cloud (via Google Cloud AI Platform and
+              Google Cloud Function), and getting these models to run in a
+              performant manner on constrained hardware.
+            </li>
+          </ul>
+          <h2>Spectre Secure - Consultant; June 2018 to August 2018</h2>
+          <ul class="">
+            <li>Worked with founders to design a drone for law enforcement</li>
+            <li>
+              Dealt with various engineering challenges associated with
+              navigation in small spaces
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2>Development Skills</h2>
+          <ul class="">
+            <li>
+              <h4>Python</h4>
+              <ul>
+                <li>
+                  Data manipulation
+                </li>
+                <li>
+                  Data gathering via REST APIs and Websocket streams (done on
+                  <a href="https://www.huobi.com" target="_blank">Huobi</a>)
+                </li>
+                <li>
+                  Medical diagnostics using machine learning (convolutional
+                  nets) via Tensorflow and public datasets
+                </li>
+                <li>
+                  Familiarity with
+                  <a href="https://pypi.org/project/pandas/" target="_blank"
+                    >pandas</a
+                  >,
+                  <a href="https://pypi.org/project/numpy/" target="_blank"
+                    >numpy</a
+                  >, and
+                  <a href="https://www.tensorflow.org/" target="_blank"
+                    >tensorflow</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h4>
+                Rust
+              </h4>
+              <ul>
+                <li>
+                  Faster data gathering via REST APIs
+                </li>
+                <li>
+                  High speed linear algebra
+                </li>
+                <li>
+                  Financial order handling on
+                  <a href="https://alpaca.markets/" target="_blank">Alpaca</a>
+                </li>
+                <li>
+                  Familiarity with
+                  <a href="https://crates.io/crates/ndarray" target="_blank"
+                    >ndarray</a
+                  >,
+                  <a
+                    href="https://crates.io/crates/ndarray-linalg"
+                    target="_blank"
+                    >ndarray-linalg</a
+                  >,
+                  <a href="https://crates.io/crates/arrayfire" target="_blank"
+                    >arrayfire</a
+                  >, and
+                  <a href="https://crates.io/crates/reqwest" target="_blank"
+                    >reqwest</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h4>
+                Development Tools
+              </h4>
+              <ul>
+                <li>
+                  I have experiance with Git, across GitHub, GitLab, and
+                  Bitbucket (this website is hosted on GitHub, actually)
+                </li>
+                <li>
+                  I'm also familiar with Anaconda and environment managment, on
+                  both Windows and Mac
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h4>
+                OS
+              </h4>
+              <ul>
+                <li>
+                  Development on Linux (Ubuntu), Mac, and Windows
+                </li>
+                <li>
+                  This includes development on memory and compute constrained
+                  platforms, such as Nvidia's Jetson Nano, Google Cloud AI
+                  Platform, and Google Cloud Functions
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h4>Further Skills</h4>
+              <ul>
+                <li>I have varying amounts of exposure to R, Bash, and SQL</li>
+                <li>
+                  I've also built computers before, and have some degree of
+                  familiarity with their internal workings and with overclocking
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2>Projects</h2>
+          <ul class="">
+            <li>
+              <h4>
+                <a
+                  href="https://github.com/rmcwhorter/crypt_arb_LFS"
+                  target="_blank"
+                  >Triangular Arbitrage in Cryptocurrency Markets</a
+                >
+              </h4>
+              <ul>
+                <li>
+                  Worked to find mean reversion in AxB - C, where A, B, C are
+                  currency pairs
+                </li>
+                <li>
+                  Learned to work with large amounts of data: in aggregate I
+                  collected over 7 GB of financial time series data
+                </li>
+                <li>
+                  Learned to work with RESTful APIs to communicate with
+                  exchanges
+                </li>
+                <li>
+                  Discovered a closure on the set of approximations for any
+                  given currency
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h4>
+                <a href="https://github.com/rmcwhorter/primes" target="_blank"
+                  >Rust vs C++: Prime Factorization</a
+                >
+              </h4>
+              <ul>
+                <li>
+                  Gauged code performance using prime factorization, a process
+                  important in cryptography
+                </li>
+                <li>
+                  Determined C++ to be slightly faster than Rust, using the same
+                  algorithm
+                </li>
+                <li>
+                  Wrote a blog post (which can be found
+                  <a
+                    href="https://rmcwhorter.github.io/blog/1576964931.html"
+                    target="_blank"
+                    >here</a
+                  >) detailing the methodology and code I used in my tests
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2>Organizations</h2>
+          <ul class="">
+            <li>
+              <h4>
+                <a href="https://www.texasusit.org/" target="_blank" class=""
+                  >Texas USIT</a
+                >
+              </h4>
+              <ul>
+                <li>
+                  General Member, August 2018 to Present
+                </li>
+                <li>
+                  Participated in weekly Analyst Group sessions, August 2018 to
+                  May 2019
+                </li>
+                <li>
+                  Participated in 2019 Analyst Group Stock Pitch
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-				<!-- Header -->
-					<header id="header">
-						<span class="avatar"><a href="index.html"><img src="images/better_profile_pic.jpg" alt=""></a></span>
-						<h1>Ryan McWhorter</h1>
-						<h2>My <a href="reading.html" target="_blank"><span class="label">reading list</span></a> is far more interesting</h2>
-						<ul class="icons">
-							<li><a href="index.html" class="icon style2 fa-home"><span class="label">Home</span></a></li>
-							<li><a href="https://twitter.com/rmcwhorter99" target="_blank" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="https://www.linkedin.com/in/ryan-mcwhorter/" target="_blank" class="icon style2 fa-linkedin"><span class="label">Linked In</span></a></li>
-							<li><a href="https://github.com/rmcwhorter" target="_blank" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
-							<li><a href="mailto:ryan.mcwhorter@utexas.edu" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
-						</ul>
-					</header>
+      <!-- Footer -->
+    </div>
 
-				<!-- Main -->
-					<section id="main">
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.poptrox.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/main.js"></script>
 
-						<!-- Thumbnails -->
-						<div>
-							<h2>Education - University of Texas, Austin</h2>
-							<ul class="">
-								<li>Majoring in quantitative finance</li>
-								<li>80 completed credit hours, junior classification</li>
-								<li>This includes 13 additional hours of upper level mathematics including probability, linear algebra, and differential equations which fall outside my major</li>
-							</ul>
-						</div>
-						<div>
-							<h2>Spectre Secure - Consultant; June 2018 to August 2018</h2>
-							<ul class="">
-								<li>Worked with founders to design a drone for law enforcement</li>
-								<li>Dealt with various engineering challenges associated with navigation in small spaces</li>
-							</ul>
-							<h2>Chick-fil-A - Team Member; June 2016 to August 2016</h2>
-							<ul class="">
-								<li>Worked with fellow employees to ensure fast service and good coordination</li>
-								<li>Kept storage spaces in order, guarenteeing efficency</li>
-							</ul>
-						</div>
-						<div>
-							<h2>Development Skills</h2>
-							<ul class="">
-								<li>
-									<h4>Python</h4>
-									<ul>
-										<li>
-											Data manipulation
-										</li>
-										<li>
-											Data gathering via REST APIs and Websocket streams (done on <a href="https://www.huobi.com" target="_blank">Huobi</a>)
-										</li>
-										<li>
-											Medical diagnostics using machine learning (convolutional nets) via Tensorflow and public datasets
-										</li>
-										<li>
-											<a href="https://pypi.org/project/pandas/" target="_blank">pandas</a>, <a href="https://pypi.org/project/numpy/" target="_blank">numpy</a>, <a href="https://www.tensorflow.org/" target="_blank">tensorflow</a>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<h4>
-										Rust
-									</h4>
-									<ul>
-										<li>
-											Faster data gathering via REST APIs
-										</li>
-										<li>
-											High speed linear algebra
-										</li>
-										<li>
-											GPU programming via Arrayfire
-										</li>
-										<li>
-											Financial order handling on <a href="https://alpaca.markets/" target="_blank">Alpaca</a>
-										</li>
-										<li>
-											<a href="https://crates.io/crates/ndarray" target="_blank">ndarray</a>, <a href="https://crates.io/crates/ndarray-linalg" target="_blank">ndarray-linalg</a>, <a href="https://crates.io/crates/arrayfire" target="_blank">arrayfire</a>, <a href="https://crates.io/crates/reqwest" target="_blank">reqwest</a>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<h4>
-										Development Tools
-									</h4>
-									<ul>
-										<li>
-											I have experiance with Git, across GitHub, GitLab, and Bitbucket (this website is hosted on GitHub, actually)
-										</li>
-										<li>
-											I'm also familiar with Anaconda and environment managment, on both Windows and Mac
-										</li>
-									</ul>
-								</li>
-								<li>
-									<h4>
-										OS
-									</h4>
-									<ul>
-										<li>
-											Development on Linux (Ubuntu), Mac, and Windows
-										</li>
-										<li>
-											This includes development on memory and compute constrained platforms, such as Nvidia's Jetson Nano
-										</li>
-									</ul>
-								</li>
-								<li>
-									<h4>Further Skills</h4>
-									<ul>
-										<li>I have varying amounts of exposure to R, Bash, and SQL</li>
-										<li>I've also built computers before, and have some degree of familiarity with their internal workings and with overclocking</li>
-									</ul>
-								</li>
-							</ul>
-						</div>
-						<div>
-							<h2>Projects</h2>
-							<ul class="">
-								<li>
-									<h4><a href="https://github.com/rmcwhorter/crypt_arb_LFS" target="_blank">Triangular Arbitrage in Cryptocurrency Markets</a></h4>
-									<ul>
-										<li>
-											Worked to find mean reversion in AxB - C, where A, B, C are currency pairs
-										</li>
-										<li>
-											Learned to work with large amounts of data: in aggregate I collected over 7 GB of financial time series data
-										</li>
-										<li>
-											Learned to work with RESTful APIs to communicate with exchanges
-										</li>
-										<li>
-											Discovered a closure on the set of approximations for any given currency
-										</li>
-									</ul>
-								</li>
-								<li>
-									<h4><a href="https://github.com/rmcwhorter/primes" target="_blank">Rust vs C++: Prime Factorization</a></h4>
-									<ul>
-										<li>
-											Gauged code performance using prime factorization, a process important in cryptography
-										</li>
-										<li>
-											Determined C++ to be slightly faster than Rust, using the same algorithm
-										</li>
-										<li>
-											Wrote a blog post (which can be found <a href="https://rmcwhorter.github.io/blog/1576964931.html" target="_blank">here</a>) detailing the methodology and code I used in my tests
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</div>
-						<div>
-							<h2>Organizations</h2>
-							<ul class="">
-								<li>
-									<h4><a href="https://www.texasusit.org/" target="_blank" class="">Texas USIT</a></h4>
-									<ul>
-										<li>
-											General Member, August 2018 to Present
-										</li>
-										<li>
-											Participated in weekly Analyst Group sessions, August 2018 to May 2019
-										</li>
-										<li>
-											Participated in 2019 Analyst Group Stock Pitch
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</div>
-					</section>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
 
-				<!-- Footer -->
-					
-
-			</div>
-
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.poptrox.min.js"></script>
-		<script src="assets/js/skel.min.js"></script>
-		<script src="assets/js/main.js"></script>
-		
-		<!-- The core Firebase JS SDK is always required and must be listed first -->
-		<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
-
-		<!-- TODO: Add SDKs for Firebase products that you want to use
+    <!-- TODO: Add SDKs for Firebase products that you want to use
 			https://firebase.google.com/docs/web/setup#available-libraries -->
-		<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-analytics.js"></script>
 
-		<script>
-		// Your web app's Firebase configuration
-		var firebaseConfig = {
-			apiKey: "AIzaSyBKh6_av2jddYO0tTm22wysXL-thvBdKWc",
-			authDomain: "personal-site-5502c.firebaseapp.com",
-			databaseURL: "https://personal-site-5502c.firebaseio.com",
-			projectId: "personal-site-5502c",
-			storageBucket: "personal-site-5502c.appspot.com",
-			messagingSenderId: "623204832050",
-			appId: "1:623204832050:web:c26fcb97edb0db67fffd2b",
-			measurementId: "G-KM1SHZD469"
-		};
-		// Initialize Firebase
-		firebase.initializeApp(firebaseConfig);
-		firebase.analytics();
-		</script>
-	</body>
-	
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBKh6_av2jddYO0tTm22wysXL-thvBdKWc",
+        authDomain: "personal-site-5502c.firebaseapp.com",
+        databaseURL: "https://personal-site-5502c.firebaseio.com",
+        projectId: "personal-site-5502c",
+        storageBucket: "personal-site-5502c.appspot.com",
+        messagingSenderId: "623204832050",
+        appId: "1:623204832050:web:c26fcb97edb0db67fffd2b",
+        measurementId: "G-KM1SHZD469",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+  </body>
 </html>
