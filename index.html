@@ -1,85 +1,133 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <!--
 	Visualize by TEMPLATED
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
-	<head>
-		<title>Ryan McWhorter | Home</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body>
+  <head>
+    <title>Ryan McWhorter | Home</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header">
+        <span class="avatar"
+          ><a href="#"><img src="images/better_profile_pic.jpg" alt="" /></a
+        ></span>
+        <h1>
+          Hello, I'm Ryan McWhorter and you've found my website. I'm a
+          quantitative finance student at UT, Austin. I'm from Dallas, and I
+          enjoy <a href="reading.html">reading</a>, mathematics, and video
+          games. Check out my résumé <a href="resume.html" class="">here</a>.
+        </h1>
+        <ul class="icons">
+          <li>
+            <a href="index.html" class="icon style2 fa-home"
+              ><span class="label">Home</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://twitter.com/rmcwhorter99"
+              target="_blank"
+              class="icon style2 fa-twitter"
+              ><span class="label">Twitter</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/ryan-mcwhorter/"
+              target="_blank"
+              class="icon style2 fa-linkedin"
+              ><span class="label">Linked In</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/rmcwhorter"
+              target="_blank"
+              class="icon style2 fa-github"
+              ><span class="label">GitHub</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="mailto:ryan.mcwhorter@utexas.edu"
+              class="icon style2 fa-envelope-o"
+              ><span class="label">Email</span></a
+            >
+          </li>
+        </ul>
+      </header>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+      <!-- Main -->
+      <section id="main">
+        <div>
+          <h1>
+            About Me:
+          </h1>
+          <p>
+            I'm a quantitative finance major at UT, Austin. I'm from Dallas,
+            Texas, and I enjoy reading, mathematics, and video games. I'm
+            currently working on novel medical imaging techniques using machine
+            learning <a href="https://sigmoid-tech.com/" target="_blank">at Sigmoid Technologies</a>, and I'm doing research on the application of differential
+            geometry to risk measurement in finance. I'm looking for an
+            internship for the summer of 2021 in quantitative finance or tech more generally.
+          </p>
+        </div>
+        <div>
+          <h1>
+            Blog Posts:
+          </h1>
+          <h2>
+            December 2019
+          </h2>
+          <ul>
+            <li>
+              <a href="blog/1576964931.html" target="_blank"
+                ><span class="label"
+                  >Rust vs C++ Round 1: Prime Factorization</span
+                ></a
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
 
-				<!-- Header -->
-					<header id="header">
-						<span class="avatar"><a href="#"><img src="images/better_profile_pic.jpg" alt=""></a></span>
-						<h1>Hello, I'm Ryan McWhorter and you've found my website. I'm a quantitative finance student at UT, Austin. I'm from Dallas, and I enjoy <a href="reading.html">reading</a>, mathematics, and video games. Check out my résumé <a href="resume.html" class="">here</a>.</h1>
-						<ul class="icons">
-							<li><a href="index.html" class="icon style2 fa-home"><span class="label">Home</span></a></li>
-							<li><a href="https://twitter.com/rmcwhorter99" target="_blank" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="https://www.linkedin.com/in/ryan-mcwhorter/" target="_blank" class="icon style2 fa-linkedin"><span class="label">Linked In</span></a></li>
-							<li><a href="https://github.com/rmcwhorter" target="_blank" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
-							<li><a href="mailto:ryan.mcwhorter@utexas.edu" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
-						</ul>
-					</header>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.poptrox.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/main.js"></script>
 
-				<!-- Main -->
-					<section id="main">
-						<div>
-							<h1>
-								About Me:
-							</h1>
-							<p>I'm currently interested in convolutional neural networks for <a href="resume.html#sigtech">medical imaging</a>, and also non-physical (mostly financial) applications of differential geometry (inspired by Pia Malaney's <a href="https://www.semanticscholar.org/paper/The-Index-Number-Problem%3A-A-Dierential-Geometric-Malaney/eb74898337415912a12d5b6642e5c2e6950f637c?p2df" target="_blank">work</a>). If you're familiar with this and want to talk, you can <a href="mailto:ryan.mcwhorter@utexas.edu"><span class="label">email</span></a> me.</p>
-						</div>
-						<div>
-							<h1>
-								Blog Posts:
-							</h1>
-							<h2>
-								December 2019
-							</h2>
-							<ul>
-								<li><a href="blog/1576964931.html" target="_blank"><span class="label">Rust vs C++ Round 1: Prime Factorization</span></a></li>
-							</ul>
-						</div>
-					</section>
-			</div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.poptrox.min.js"></script>
-		<script src="assets/js/skel.min.js"></script>
-		<script src="assets/js/main.js"></script>
-
-		<!-- The core Firebase JS SDK is always required and must be listed first -->
-		<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
-
-		<!-- TODO: Add SDKs for Firebase products that you want to use
+    <!-- TODO: Add SDKs for Firebase products that you want to use
 			https://firebase.google.com/docs/web/setup#available-libraries -->
-		<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-analytics.js"></script>
-	
-		<script>
-		  // Your web app's Firebase configuration
-		  var firebaseConfig = {
-			apiKey: "AIzaSyBKh6_av2jddYO0tTm22wysXL-thvBdKWc",
-			authDomain: "personal-site-5502c.firebaseapp.com",
-			databaseURL: "https://personal-site-5502c.firebaseio.com",
-			projectId: "personal-site-5502c",
-			storageBucket: "personal-site-5502c.appspot.com",
-			messagingSenderId: "623204832050",
-			appId: "1:623204832050:web:c26fcb97edb0db67fffd2b",
-			measurementId: "G-KM1SHZD469"
-		  };
-		  // Initialize Firebase
-		  firebase.initializeApp(firebaseConfig);
-		  firebase.analytics();
-		</script>
+    <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-analytics.js"></script>
 
-	</body>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBKh6_av2jddYO0tTm22wysXL-thvBdKWc",
+        authDomain: "personal-site-5502c.firebaseapp.com",
+        databaseURL: "https://personal-site-5502c.firebaseio.com",
+        projectId: "personal-site-5502c",
+        storageBucket: "personal-site-5502c.appspot.com",
+        messagingSenderId: "623204832050",
+        appId: "1:623204832050:web:c26fcb97edb0db67fffd2b",
+        measurementId: "G-KM1SHZD469",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+  </body>
 </html>
